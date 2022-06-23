@@ -50,7 +50,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: const Text(
                   'Sign in',
                   style: TextStyle(fontSize: 30,
-                  color: Colors.red),
+                  color: Colors.pink),
                 )),
             Container(
               padding: const EdgeInsets.all(10),
@@ -83,7 +83,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 textAlign:TextAlign.right,
                 
                 style: TextStyle(
-                  color: Colors.red,
+                  color: Colors.pink,
                   
                 ),
               )
@@ -104,7 +104,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                    
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.red[900],
+                    primary: Colors.pink[400],
                   )
                 )
             ),
@@ -113,10 +113,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 const Text('Do not have account? '),
                 TextButton(
                   child: const Text(
-                    'Sign',
+                    'Sign up',
                     style: TextStyle(fontSize: 15,
                     
-                       color: Colors.red),
+                       color: Colors.pink),
                 
                   ),
                   onPressed: () {

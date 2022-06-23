@@ -43,7 +43,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               padding: const EdgeInsets.all(10),
               child: const Text(
                 'Sign up',
-                style: TextStyle(fontSize: 20, color: Colors.red),
+                style: TextStyle(fontSize: 20, color: Colors.pink),
               )),
           Container(
             padding: const EdgeInsets.all(10),
@@ -96,14 +96,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     Navigator.pushReplacement(
                     context,MaterialPageRoute(builder: (context) => Info()),);  
                   },
-                  style: ElevatedButton.styleFrom(primary: Colors.red[900]))),
+                  style: ElevatedButton.styleFrom(primary: Colors.pink[400]))),
           Row(
             children: <Widget>[
               const Text('Already  have an account?'),
               TextButton(
                 child: const Text(
                   'Sign in',
-                  style: TextStyle(fontSize: 20, color: Colors.red),
+                  style: TextStyle(fontSize: 20, color: Colors.pink),
                 ),
                 onPressed: () {
                   //signup screen

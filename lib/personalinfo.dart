@@ -46,7 +46,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               padding: const EdgeInsets.all(10),
               child: const Text(
                 'Personal Information',
-                style: TextStyle(fontSize: 20, color: Colors.red),
+                style: TextStyle(fontSize: 20, color: Colors.pink),
               )),
           Container(
             padding: const EdgeInsets.all(10),
@@ -114,7 +114,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextField(
-              obscureText: true,
+              //obscureText: true,
               controller: nameController3,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -125,7 +125,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextField(
-              obscureText: true,
+              //obscureText: true,
               controller: nameController4,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -136,7 +136,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           Container(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: TextField(
-              obscureText: true,
+              //obscureText: true,
               controller: nameController5,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -157,7 +157,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                        MaterialPageRoute(builder: (context) => Homepage(),
                    ));
                   },
-                  style: ElevatedButton.styleFrom(primary: Colors.red[900]))),
+                  style: ElevatedButton.styleFrom(primary: Colors.pink[400]))),
         ]));
   }
 }
