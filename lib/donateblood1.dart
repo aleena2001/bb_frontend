@@ -1,34 +1,38 @@
+
 import 'package:flutter/material.dart';
-import 'package:blood_donation/home.dart';
-//void main() => runApp(new Info());
+import 'package:blood_donation/donateblood2.dart';
+class Donate1 extends StatefulWidget {
+  //const Homepage({ Key? key }) : super(key: key);
 
-class Info extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
+  @override
+  State<Donate1> createState() => _DonateState();
+}
 
-  //static const String _title = 'Sample App';
+class _DonateState extends State<Donate1> {  //const Donate1({ Key? key }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      //title: _title,
-      
-      home: Scaffold(
-        //appBar: AppBar(title: const Text(_title)),
-        body: new MyStatefulWidget(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(" "),
+        backgroundColor: Colors.pink,
+        
       ),
+      body: DonateBlood(),
+
+
     );
   }
 }
-
-class MyStatefulWidget extends StatefulWidget {
-  //const MyStatefulWidget({Key? key}) : super(key: key);
+class DonateBlood extends StatefulWidget {
+  //const DonateBlood({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<DonateBlood> createState() => _DonateBloodState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _DonateBloodState extends State<DonateBlood> {
   TextEditingController nameController = TextEditingController();
   TextEditingController nameController1 = TextEditingController();
   TextEditingController nameController2 = TextEditingController();
@@ -47,18 +51,49 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(10),
               child: const Text(
-                'Personal Information',
+                '',
                 style: TextStyle(fontSize: 20, color: Colors.pink),
               )),
+          Container(
+            child: Text("   Date of last Donation?",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            )),
+          ),
           Container(
             padding: const EdgeInsets.all(10),
             child: TextField(
               controller: nameController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Age',
+                labelText: 'DD|MM|YY',
               ),
             ),
+          ),
+          Container(
+            child: Text("   Did you experience any difficulty or discomfort during previous donations?",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            )),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              controller: nameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                //labelText: 'DD|MM|YY',
+              ),
+            ),
+          ),
+          Container(
+            child: Text("   Are you feeling well today?",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            )),
           ),
           Container(
             padding: const EdgeInsets.all(10),
@@ -66,11 +101,29 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               controller: nameController1,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Blood Group',
+                //labelText: 'Blood Group',
               ),
             ),
           ),
           Container(
+            child: Text("   Time of last meal?",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            )),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              controller: nameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                //labelText: 'DD|MM|YY',
+              ),
+            ),
+          ),
+          
+         /* Container(
             padding: EdgeInsets.all(20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -104,8 +157,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     hint: Text("Sex")),
               ],
             ),
-          ),
-          Container(
+          ),*/
+          /*Container(
             padding: const EdgeInsets.all(10),
             child: TextField(
               keyboardType: TextInputType.emailAddress,
@@ -145,7 +198,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 labelText: 'Weight',
               ),
             ),
-          ),
+          ),*/
           
           Container(
               height: 80,
@@ -153,11 +206,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: ElevatedButton(
                   child: const Text('Next'),
                   onPressed: () {
-                    print(nameController.text);
-                    Navigator.pushReplacement(
-                      context,
-                       MaterialPageRoute(builder: (context) => Homepage(),
-                   ));
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Donate2()));
                   },
                   style: ElevatedButton.styleFrom(primary: Colors.pink[400]))),
         ]));

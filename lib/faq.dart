@@ -1,7 +1,5 @@
 import 'package:blood_donation/constants.dart';
 import 'package:flutter/material.dart';
-
-
 class Faq extends StatelessWidget {
   //  Faq({Key? key}) : super(key: key);
 

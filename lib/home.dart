@@ -1,25 +1,42 @@
 import 'package:blood_donation/faq.dart';
 import 'package:flutter/material.dart';
-class Homepage  extends StatelessWidget {
-  //const ({ Key? key }) : super(key: key);
+import 'package:blood_donation/events.dart';
+import 'package:blood_donation/donateblood1.dart';
+class Homepage extends StatefulWidget {
+  //const Homepage({ Key? key }) : super(key: key);
 
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+   int _selectedIndex=0;
+   /*static const List<Widget> _widgetOptions=<Widget>
+   [
+    
+   ];*/
+   void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         title: Text("Home"),
         backgroundColor: Colors.pink[400],
         
         
+        
       ),
-      body:
-      
-      
+      body:    
       Padding(
         padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Column(
           children:[
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
@@ -47,7 +64,7 @@ class Homepage  extends StatelessWidget {
 
              Row(
             //mainAxisAlignment: MainAxisAlignment.center,
-            
+             
             children: [
               
               Column(
@@ -59,6 +76,7 @@ class Homepage  extends StatelessWidget {
                     child: ElevatedButton(
                     onPressed: () {
                       //forgot password screen
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Donate1()));
                     },
                     //child: const Text('Forgot Password',),
                     child:const Text(
@@ -70,7 +88,7 @@ class Homepage  extends StatelessWidget {
                       ),
                       
                       style:ElevatedButton.styleFrom(
-                        primary: Colors.pink[400],
+                        primary: Colors.pink[400], 
                         padding: EdgeInsets.all(30),
                         alignment: Alignment.center
                       ) ,
@@ -133,6 +151,8 @@ class Homepage  extends StatelessWidget {
                     child: ElevatedButton(
                     onPressed: () {
                       //forgot password screen
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Events()));
+
                     },
                     //child: const Text('Forgot Password',),
                     child:const Text(
@@ -194,14 +214,43 @@ class Homepage  extends StatelessWidget {
                   
               
             ,),
-            ]
+            SizedBox(height: 5,),
+           /*Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+           )*/
+           
+            ],
+
             
         ),
-      ),
-    
         
-    )
+        
+      ),
       
-    ;
+          bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+                  
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'User',
+            ),           
+          
+        ],
+        //type:BottomNavigationBarType.shifting,
+       currentIndex: _selectedIndex,
+        selectedItemColor: Colors.red[900],
+        onTap: _onItemTapped,
+      ),
+       
+    );
   }
 }
+

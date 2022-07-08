@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
      // title: _title,
       home: Scaffold(
         //appBar: AppBar(title: const Text(_title)),
@@ -79,7 +80,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               },
               //child: const Text('Forgot Password',),
               child:const Text(
-                'Forgot Password',
+                'Forgot Password?',
                 textAlign:TextAlign.right,
                 
                 style: TextStyle(
